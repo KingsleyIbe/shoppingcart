@@ -5,6 +5,7 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 import Grid from '@material-ui/core/Grid';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import Badge from '@material-ui/core/Badge';
+import Item from './items/Item';
 
 //styles
 import { Wrapper } from './App.styles';
@@ -29,18 +30,22 @@ const App = () => {
 
   const getTotalItems = () => null;
 
-  const handleAddToCart = () => null;
+  const handleAddToCart = (clickedItem: CartItemType) => null;
 
   const handleRemoveFromCart = () => null;
 
   isLoading && <LinearProgress />;
   error && <div>Something went wrong! Try again</div>;
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1 className="text-center text-[#f00]">Coming Soon!</h1>
-      </header>
-    </div>
+    <Wrapper>
+      <Grid container spacing={3}>
+        {data && data.map(item => (
+          <Grid item xs={12} sm={6} md={4} key={item.id}>
+            <Item item={item} handleAddToCart={handleAddToCart} />
+          </Grid>
+        ))}
+      </Grid>
+    </Wrapper>
   );
 };
 
