@@ -11,7 +11,7 @@ type Props = {
 };
 
 const CardItem: React.FC<Props> = ({ item, addToCart, removeFromCart }) => {
-  const { id, title, price, category, description, image, amount } = item;
+  const { id, title, price, category, description, image, quantity } = item;
   return (
     <Wrapper>
       <div className="item-image">
@@ -23,13 +23,13 @@ const CardItem: React.FC<Props> = ({ item, addToCart, removeFromCart }) => {
           <p>{item.description}</p>
           <p>Category: {item.category}</p>
           <p>Price: ${item.price}</p>
-          <p>Total: ${(item.amount * item.price).toFixed(2)}</p>
+          <p>Total: ${(item.quantity * item.price).toFixed(2)}</p>
         </div>
         <div className="buttons">
           <Button variant="contained" color="primary" size="small" disableElevation onClick={() => removeFromCart(item.id)}>
             -
           </Button>
-          <p>${item.amount}</p>
+          <p>{item.quantity}</p>
           <Button variant="contained" color="primary" size="small" disableElevation onClick={() => addToCart(item)}>
             +
           </Button>

@@ -11,7 +11,7 @@ type Props = {
 }
 
 const Item: React.FC<Props> = ({ item, handleAddToCart }) => {
-  const { id, title, price, category, description, image, amount } = item;
+  const { id, title, price, category, description, image, quantity } = item;
   return (
     <Wrapper>
       <div className="item-image">

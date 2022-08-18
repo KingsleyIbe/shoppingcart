@@ -19,7 +19,7 @@ export type CartItemType = {
   category: string;
   description: string;
   image: string;
-  amount: number;
+  quantity: number;
 }
 
 const getProducts = async (): Promise<CartItemType[]> =>
@@ -31,15 +31,15 @@ const App = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const getTotalItems = (items: CartItemType[]) => 
-    items.reduce((ack: number, item) => ack + item.amount, 0);
+    items.reduce((ack: number, item) => ack + item.quantity, 0);
 
   const handleAddToCart = (clickedItem: CartItemType) => {
     setCartItems(prevItems => {
       const existingItem = prevItems.find(item => item.id === clickedItem.id);
       if (existingItem) {
-        return prevItems.map(item => item.id === clickedItem.id ? { ...item, amount: item.amount + 1 } : item);
+        return prevItems.map(item => item.id === clickedItem.id ? { ...item, amount: item.quantity + 1 } : item);
       } else {
-        return [...prevItems, { ...clickedItem, amount: 1 }];
+        return [...prevItems, { ...clickedItem, quantity: 1 }];
       }
     }
     );
@@ -48,8 +48,8 @@ const App = () => {
   const handleRemoveFromCart = (id: number) => {
     setCartItems(prevItems => prevItems.reduce((ack, item) => {
       if (item.id === id) {
-        if (item.amount === 1) return ack;
-          return [...ack, { ...item, amount: item.amount - 1 }];
+        if (item.quantity === 1) return ack;
+          return [...ack, { ...item, amount: item.quantity - 1 }];
       } else {
         return [...ack, item];
       }
