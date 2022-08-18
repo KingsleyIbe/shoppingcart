@@ -6,9 +6,10 @@ import Grid from '@material-ui/core/Grid';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import Badge from '@material-ui/core/Badge';
 import Item from './items/Item';
+import Cart from './cart/Cart';
 
 //styles
-import { Wrapper } from './App.styles';
+import { Wrapper, StyledButton } from './App.styles';
 
 // tpyes
 export type CartItemType = {
@@ -26,9 +27,11 @@ const getProducts = async (): Promise<CartItemType[]> =>
 
 const App = () => {
   const { data, isLoading, error } = useQuery<CartItemType[]>('products', getProducts);
-  console.log(data);
+  const [cartItems, setCartItems] = useState<CartItemType[]>([]);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const getTotalItems = () => null;
+  const getTotalItems = (items: CartItemType[]) => 
+    items.reduce((ack: number, item) => ack + item.amount, 0);
 
   const handleAddToCart = (clickedItem: CartItemType) => null;
 
@@ -38,6 +41,14 @@ const App = () => {
   error && <div>Something went wrong! Try again</div>;
   return (
     <Wrapper>
+      <Drawer anchor="right" open={isOpen} onClose={() => setIsOpen(false)}>
+        <Cart cartItems={cartItems} addToCart={handleAddToCart} removeFromCart={handleRemoveFromCart}/>
+      </Drawer>
+      <StyledButton onClick={() => setIsOpen(true)}>
+        <Badge badgeContent={getTotalItems(cartItems)} color="secondary">
+          <AddShoppingCartIcon />
+        </Badge>
+      </StyledButton>
       <Grid container spacing={3}>
         {data && data.map(item => (
           <Grid item xs={12} sm={6} md={4} key={item.id}>

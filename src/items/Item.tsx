@@ -1,4 +1,4 @@
-import Button from '@material-ui/core/button';
+import Button from '@material-ui/core/Button';
 
 //types
 import { CartItemType } from '../App';
