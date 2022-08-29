@@ -37,7 +37,7 @@ const App = () => {
     setCartItems(prevItems => {
       const existingItem = prevItems.find(item => item.id === clickedItem.id);
       if (existingItem) {
-        return prevItems.map(item => item.id === clickedItem.id ? { ...item, amount: item.quantity + 1 } : item);
+        return prevItems.map(item => item.id === clickedItem.id ? { ...item, quantity: item.quantity + 1 } : item);
       } else {
         return [...prevItems, { ...clickedItem, quantity: 1 }];
       }
@@ -49,7 +49,7 @@ const App = () => {
     setCartItems(prevItems => prevItems.reduce((ack, item) => {
       if (item.id === id) {
         if (item.quantity === 1) return ack;
-          return [...ack, { ...item, amount: item.quantity - 1 }];
+          return [...ack, { ...item, quantity: item.quantity - 1 }];
       } else {
         return [...ack, item];
       }
