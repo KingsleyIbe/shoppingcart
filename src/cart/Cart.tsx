@@ -15,7 +15,7 @@ const Cart: React.FC<Props> = ({ cartItems, addToCart, removeFromCart }) => {
     items.reduce((ack: number, item) => ack + item.quantity * item.price, 0);
   return (
     <Wrapper>
-      <h2>Your shopping Cart</h2>
+      <h2 className="text-[#3f51b5] font-bold">Your shopping Cart</h2>
       {cartItems.length === 0 ? (
         <p>Your cart is empty</p>
       ) : ( null)} 
@@ -27,7 +27,7 @@ const Cart: React.FC<Props> = ({ cartItems, addToCart, removeFromCart }) => {
           removeFromCart={() => removeFromCart(item.id)}
         />
       ))}
-      <p>Total items: {getTotalItems(cartItems).toFixed(2)}</p>
+      <p className="text-[#3f51b5] font-bold">Total items: {getTotalItems(cartItems).toFixed(2)}</p>
     </Wrapper>
   );
 }
