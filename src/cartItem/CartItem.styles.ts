@@ -7,22 +7,21 @@ export const Wrapper = style.div`
   border-bottom: 1px solid lightblue;
   padding-bottom: 20px;
   margin: 10px 0;
+  max-width: 100%;
 
   div {
     flex: 1;
   }
 
-  .information,
   .buttons {
     display: flex;
     justify-content: space-between;
   }
 
   img {
-    max-width: 80px;
+    max-width: 150px;
     object-fit: cover;
     margin-left: 40px;
-    margin-right: 10px;
   }
 
 `;

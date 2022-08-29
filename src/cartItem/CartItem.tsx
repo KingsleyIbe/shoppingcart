@@ -17,13 +17,15 @@ const CardItem: React.FC<Props> = ({ item, addToCart, removeFromCart }) => {
       <div className="item-image">
         <img src={item.image} alt={item.title} />
       </div>
-      <div className="item-details">
+      <div>
         <h2 className="text-[#3f51b5]">{item.title}</h2>
         <div className="information">
           <p>{item.description}</p>
-          <p className="font-bold">Category: {item.category}</p>
-          <p className="font-bold">Price: ${item.price}</p>
-          <p className="font-bold">Total: ${(item.quantity * item.price).toFixed(2)}</p>
+          <div className="mt-2">
+            <p className="font-bold">Category: {item.category}</p>
+            <p className="font-bold">Price: ${item.price}</p>
+            <p className="font-bold">Total: ${(item.quantity * item.price).toFixed(2)}</p>
+          </div>
         </div>
         <div className="buttons">
           <Button variant="contained" color="primary" size="small" disableElevation onClick={() => removeFromCart(item.id)}>
