@@ -27,7 +27,7 @@ const Cart: React.FC<Props> = ({ cartItems, addToCart, removeFromCart }) => {
           removeFromCart={() => removeFromCart(item.id)}
         />
       ))}
-      <p className="text-[#3f51b5] font-bold">Total items: {getTotalItems(cartItems).toFixed(2)}</p>
+      <p className="text-[#3f51b5] font-bold">Total Amount: ${getTotalItems(cartItems).toFixed(2)}</p>
     </Wrapper>
   );
 }

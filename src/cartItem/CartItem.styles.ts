@@ -6,6 +6,7 @@ export const Wrapper = style.div`
   font-family: 'Roboto', sans-serif;
   border-bottom: 1px solid lightblue;
   padding-bottom: 20px;
+  margin: 10px 0;
 
   div {
     flex: 1;
@@ -21,6 +22,7 @@ export const Wrapper = style.div`
     max-width: 80px;
     object-fit: cover;
     margin-left: 40px;
+    margin-right: 10px;
   }
 
 `;
