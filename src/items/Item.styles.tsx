@@ -6,12 +6,13 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 100%;
+  max-height: 100%;
   border: 1px solid lightblue;
   border-radius: 20px;
 
   button {
     border-radius: 0 0 20px 20px;
+    float: right;
   }
 
   img {
