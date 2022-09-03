@@ -1,12 +1,10 @@
-import { Link } from 'react-dom';
+import { Link } from 'react-router-dom';
 import '../assets/styles/notfound.css';
 
 const NotFound = () => (
   <div className="not-found">
-    <div>
-      <h1>Page not found</h1>
-      <Link to="/">Back to Home Page</Link>
-    </div>
+    <h1 className="font-bold text-[40px]">404</h1>
+    <Link to="/">Back to Home Page</Link>
   </div>
 );
 

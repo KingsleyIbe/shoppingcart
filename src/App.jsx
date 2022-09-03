@@ -1,16 +1,17 @@
 import {
-  BrowserRouter as Router, Switch, Route, Redirect,
+  BrowserRouter as Router, Routes, Route, Navigate,
 } from 'react-router-dom';
 import MainApp from './MainApp.tsx';
 import NotFound from './components/NotFound';
 
 const App = () => (
   <Router>
-    <Switch>
-      <Route exact path="/" component={MainApp} />
-      <Route path="/not-found" component={NotFound} />
-      <Redirect to="/not-found" />
-    </Switch>
+    <Routes>
+      <Route exact path="/" element={<MainApp />} />
+      <Route path="/not-found" element={<NotFound />} />
+      {/* <Navigate to="/not-found" replace /> */}
+      <Route path="*" element={<Navigate replace to="/not-found" />} />
+    </Routes>
   </Router>
 );
 
