@@ -25,7 +25,7 @@ export type CartItemType = {
 const getProducts = async (): Promise<CartItemType[]> =>
   await (await fetch('https://fakestoreapi.com/products')).json();
 
-const App = () => {
+const MainApp = () => {
   const { data, isLoading, error } = useQuery<CartItemType[]>('products', getProducts);
   const [cartItems, setCartItems] = useState<CartItemType[]>([]);
   const [isOpen, setIsOpen] = useState(false);
@@ -79,4 +79,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default MainApp;
