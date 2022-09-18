@@ -6,7 +6,7 @@ const data = [
     price: 20,
     discount: 5,
     category: "Men's fitness",
-    image: 'https://www.pexels.com/photo/gray-and-black-striped-crew-neck-top-45982/',
+    image: 'https://res.cloudinary.com/kingsleyibe-net/image/upload/v1662298356/shoppingcartReactApp/pexels-web-donut-19090_lk8g8y.jpg',
     inStock: true,
     color: 'blue',
   },
@@ -17,7 +17,7 @@ const data = [
     price: 20,
     discount: 5,
     category: "Men's fitness",
-    image: 'https://www.pexels.com/photo/gray-and-black-striped-crew-neck-top-45982/',
+    image: 'https://res.cloudinary.com/kingsleyibe-net/image/upload/v1662298357/shoppingcartReactApp/pexels-dom-j-45982_mtx0xw.jpg',
     inStock: true,
     color: 'blue',
   },
@@ -28,7 +28,7 @@ const data = [
     price: 20,
     discount: 5,
     category: "Men's fitness",
-    image: 'https://www.pexels.com/photo/gray-and-black-striped-crew-neck-top-45982/',
+    image: 'https://res.cloudinary.com/kingsleyibe-net/image/upload/v1662298358/shoppingcartReactApp/pexels-mnz-1598508_isdglb.jpg',
     inStock: true,
     color: 'blue',
   },
@@ -39,7 +39,7 @@ const data = [
     price: 20,
     discount: 5,
     category: "Men's fitness",
-    image: 'https://www.pexels.com/photo/gray-and-black-striped-crew-neck-top-45982/',
+    image: 'https://res.cloudinary.com/kingsleyibe-net/image/upload/v1662298359/shoppingcartReactApp/pexels-terje-sollie-298863_qjsioe.jpg',
     inStock: true,
     color: 'blue',
   },
@@ -50,10 +50,10 @@ const data = [
     price: 20,
     discount: 5,
     category: "Men's fitness",
-    image: 'https://www.pexels.com/photo/gray-and-black-striped-crew-neck-top-45982/',
+    image: 'https://res.cloudinary.com/kingsleyibe-net/image/upload/v1662298365/shoppingcartReactApp/pexels-mnz-1598505_qobfqk.jpg',
     inStock: true,
     color: 'blue',
   },
 ];
 
-export default data;
+module.exports = data;

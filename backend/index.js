@@ -1,7 +1,6 @@
-import data from './productData';
-
 const cors = require('cors');
 const express = require('express');
+const data = require('./productData');
 
 const app = express();
 app.use(express.json());
